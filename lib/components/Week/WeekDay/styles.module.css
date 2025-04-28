@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+.contentSelected {
+    background-color: var(--color-primary-600);
+}
+
+.name {
+    font-weight: 500;
+    color: var(--color-neutral-600);
+}
+
+.selected {
+    color: var(--color-white);
+}
+
+.date {
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--color-primary-950);
+}

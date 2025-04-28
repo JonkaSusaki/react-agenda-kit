@@ -1,0 +1,67 @@
+.container {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    width: 90%;
+}
+
+.hourText:first-child {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-110%, -50%);
+    margin-right: 10px;
+    color: var(--color-neutral-600);
+    font-weight: 600;
+}
+
+.hourText:last-child {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(110%, -50%);
+    margin-left: 10px;
+    color: var(--color-neutral-600);
+    font-weight: 600;
+}
+
+.hourLine {
+    border-top: 2px solid var(--color-neutral-200);
+    min-height: 60px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.cell {
+    transition: 0.3s;
+    padding: 10px;
+    border-left: 1px solid var(--color-neutral-200);
+    border-right: 1px solid var(--color-neutral-200);
+    overflow: hidden;
+}
+
+.cell:first-child {
+    border-left: none;
+}
+
+.cell:last-child {
+    border-right: none;
+}
+
+.item {
+    left: 5%;
+    right: 5%;
+    width: 150px;
+    background-color: var(--color-primary-200);
+    padding: 5px 10px;
+    border-radius: 15px;
+    color: #1f5eff;
+    font-weight: 600;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 2px;
+    cursor: pointer;
+}
