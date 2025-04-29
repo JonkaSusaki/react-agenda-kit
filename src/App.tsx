@@ -1,5 +1,6 @@
+import { useState } from "react";
 import "./App.css";
-import { WeekView } from "react-agenda-kit";
+import { MonthView, WeekView } from "react-agenda-kit";
 
 const now = new Date();
 
@@ -17,6 +18,10 @@ const exampleItems = [
     title: "Design review",
   },
   {
+    date: new Date(now.getTime() + 4 * 60 * 60 * 1000), // +3 hours
+    title: "Design review",
+  },
+  {
     date: new Date(now.getTime() + 1 * 24 * 60 * 60 * 1000), // +1 day
     title: "Project deadline",
   },
@@ -31,9 +36,22 @@ const exampleItems = [
 ];
 
 function App() {
+  const [currentView, setCurrentView] = useState<"day" | "week" | "month">(
+    "week"
+  );
   return (
     <>
-      <WeekView currentDate={new Date()} items={exampleItems} />
+      <button onClick={() => setCurrentView("day")}>day</button>
+      <button onClick={() => setCurrentView("week")}>week</button>
+      <button onClick={() => setCurrentView("month")}>month</button>
+
+      {currentView === "week" && (
+        <WeekView currentDate={new Date()} items={exampleItems} />
+      )}
+
+      {currentView === "month" && (
+        <MonthView currentDate={new Date()} items={exampleItems} />
+      )}
     </>
   );
 }

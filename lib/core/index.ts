@@ -133,7 +133,7 @@ export function getNextMonth(month: number, year: number) {
   return { month: nextMonth, year: nextMonthYear };
 }
 
-export function zeroPad(value: number, length: number) {
+export function zeroPad(value: number, length: number = 2) {
   return `${value}`.padStart(length, "0");
 }
 
@@ -225,7 +225,7 @@ export function getWeekNumber(date: Date) {
 /**
  * Converts a CalendarDate object to a JavaScript Date object.
  *
- * @param date - The CalendarDate to convert, represented as an array of strings 
+ * @param date - The CalendarDate to convert, represented as an array of strings
  * with the format [YYYY, MM, DD].
  * @returns A JavaScript Date object corresponding to the given CalendarDate,
  * with the time set to midnight (00:00:00.000).
@@ -240,5 +240,48 @@ export function calendarDateToDate(date: CalendarDate) {
     0,
     0,
     0 // hour, min, sec, ms
+  );
+}
+
+/**
+ * Determines if the given date is in the same month and year as the base date.
+ *
+ * @param date - The date to compare.
+ * @param basedate - The base date to compare against, defaults to the current date.
+ * @returns True if the month and year of both dates are the same, false otherwise.
+ */
+
+export function isSameMonth(date: Date, basedate = new Date()) {
+  const basedateDate = basedate.getDate();
+  const basedateMonth = +basedate.getMonth() + 1;
+  const basedateYear = basedate.getFullYear();
+  const dateDate = date.getDate();
+  const dateMonth = +date.getMonth() + 1;
+  const dateYear = date.getFullYear();
+  return (
+    +basedateDate === +dateDate &&
+    +basedateMonth === +dateMonth &&
+    +basedateYear === +dateYear
+  );
+}
+
+/**
+ * Determines if the given date is in the same day as the base date.
+ *
+ * @param date - The date to compare.
+ * @param basedate - The base date to compare against, defaults to the current date.
+ * @returns True if the day, month and year of both dates are the same, false otherwise.
+ */
+export function isSameDay(date: Date, basedate = new Date()) {
+  const basedateDate = basedate.getDate();
+  const basedateMonth = +basedate.getMonth() + 1;
+  const basedateYear = basedate.getFullYear();
+  const dateDate = date.getDate();
+  const dateMonth = +date.getMonth() + 1;
+  const dateYear = date.getFullYear();
+  return (
+    +basedateDate === +dateDate &&
+    +basedateMonth === +dateMonth &&
+    +basedateYear === +dateYear
   );
 }

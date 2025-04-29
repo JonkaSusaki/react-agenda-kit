@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+
+    padding: 20px;
+    border-radius: 5px;
+
+    height: 150px;
+
+    border: 1px solid var(--color-neutral-200);
+}
+
+.weekDay {
+    color: var(--color-neutral-600);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.cellDay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5px;
+}
+
+.cellDay.selected {
+    background-color: var(--color-primary-600);
+    color: var(--color-white);
+    border-radius: 10px;
+}
+
+.item {
+    left: 5%;
+    right: 5%;
+    width: 150px;
+    background-color: var(--color-primary-200);
+    padding: 5px 10px;
+    border-radius: 15px;
+    color: #1f5eff;
+    font-weight: 600;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 2px;
+    cursor: pointer;
+}
