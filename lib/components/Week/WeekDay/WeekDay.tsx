@@ -1,15 +1,18 @@
 import { useMemo } from "react";
 import styles from "./styles.module.css";
 import { getWeekDaysArray, zeroPad } from "../../../core";
-import { pt } from "../../../locales/pt";
+import { getAgendaKitConfig } from "../../../config";
 type Props = {
   date: Date;
   currentDate: Date;
 };
 
-const weekDays = getWeekDaysArray(pt);
-
 export default function WeekDay({ date, currentDate }: Props) {
+  const weekDays = useMemo(
+    () => getWeekDaysArray(getAgendaKitConfig().locale),
+    []
+  );
+
   const selected = useMemo(() => {
     return date.getDate() === currentDate.getDate();
   }, [currentDate, date]);

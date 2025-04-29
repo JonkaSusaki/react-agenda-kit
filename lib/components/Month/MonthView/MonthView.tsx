@@ -7,17 +7,19 @@ import {
 } from "../../../core";
 import styles from "./styles.module.css";
 import MonthCell from "../MonthCell";
-import { pt } from "../../../locales/pt";
 import { Item } from "../../../types/item";
+import { getAgendaKitConfig } from "../../../config";
 
 type Props = {
   currentDate: Date;
   items: Item[];
 };
 
-const weekDaysArray = getWeekDaysArray(pt);
-
 export default function MonthView({ currentDate, items }: Props) {
+  const weekDaysArray = useMemo(
+    () => getWeekDaysArray(getAgendaKitConfig().locale),
+    []
+  );
   const renderedCells = useMemo(() => {
     const days = calendar(
       currentDate.getMonth() + 1,

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./App.css";
-import { MonthView, WeekView } from "react-agenda-kit";
+import { MonthView, setAgendaKitConfig, WeekView } from "react-agenda-kit";
+import { en } from "./locales/en";
+import { pt } from "./locales/pt";
 
 const now = new Date();
 
@@ -39,6 +41,9 @@ function App() {
   const [currentView, setCurrentView] = useState<"day" | "week" | "month">(
     "week"
   );
+
+  setAgendaKitConfig({ locale: pt });
+  
   return (
     <>
       <button onClick={() => setCurrentView("day")}>day</button>

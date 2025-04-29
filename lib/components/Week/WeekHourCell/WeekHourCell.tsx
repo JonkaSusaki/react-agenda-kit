@@ -1,5 +1,6 @@
+import { useMemo } from "react";
+import { getAgendaKitConfig } from "../../../config";
 import { getWeekDaysArray } from "../../../core";
-import { pt } from "../../../locales/pt";
 import { Item } from "../../../types/item";
 import styles from "./styles.module.css";
 
@@ -7,9 +8,12 @@ type Props = {
   hour: string;
   items: Item[];
 };
-const weekDays = getWeekDaysArray(pt);
 
 export default function WeekHourCell({ hour, items }: Props) {
+  const weekDays = useMemo(
+    () => getWeekDaysArray(getAgendaKitConfig().locale),
+    []
+  );
   return (
     <div className={styles.container}>
       <span className={styles.hourText}>{hour}</span>
