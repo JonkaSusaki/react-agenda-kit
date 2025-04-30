@@ -1,0 +1,34 @@
+# TypeScript source files (only include compiled JavaScript in the package)
+src/
+lib/
+
+# Build artifacts
+build/
+examples/
+public/
+
+# Test files
+test/
+tests/
+
+# Config files
+.gitignore
+.editorconfig
+*.tsconfig*.json
+vite.config.ts
+
+
+# Documentation
+README.md
+CHANGELOG.md
+LICENSE.md
+
+# IDE/editor settings
+.vscode/
+.idea/
+
+# Node_modules and temporary files
+node_modules/
+*.log
+*.tmp
+.DS_Store

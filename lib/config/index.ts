@@ -1,8 +1,8 @@
-import { pt } from "../locales/pt";
+import { en } from "../locales/en";
 import { GlobalConfig } from "../types/config";
 
 let globalConfig: GlobalConfig = {
-  locale: pt,
+  locale: en,
 };
 
 export function setAgendaKitConfig(newConfig: GlobalConfig) {

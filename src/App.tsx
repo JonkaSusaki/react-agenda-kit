@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./App.css";
 import { MonthView, setAgendaKitConfig, WeekView } from "react-agenda-kit";
-import { en } from "./locales/en";
 import { pt } from "./locales/pt";
 
 const now = new Date();

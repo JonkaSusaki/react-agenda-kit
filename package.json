@@ -1,13 +1,19 @@
 {
-  "name": "react-agenda-kit",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@jonkasusaki/react-agenda-kit",
+  "author": "Jonka Susaki",
+  "description": "Agenda Kit",
+  "version": "1.0.0",
   "type": "module",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b ./tsconfig.lib.json && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonkasusaki/react-agenda-kit.git"
   },
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
@@ -33,5 +39,11 @@
     "vite": "^6.3.1",
     "vite-plugin-dts": "^4.5.3",
     "vite-plugin-lib-inject-css": "^2.2.2"
-  }
+  },
+  "keywords": [
+    "agenda",
+    "schedule",
+    "month",
+    "week"
+  ]
 }
